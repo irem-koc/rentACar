@@ -6,13 +6,24 @@ import jakarta.validation.constraints.Size;
 import lombok.*;
 
 @Data
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class CreateBrandRequest {
-    @NotNull
+    @NotNull //bunlar devreye girmedi başta @Valid
     @NotBlank
     @Size(min = 3, max = 20)
     private String name;
+
+    public CreateBrandRequest() {
+    }
+
+    public CreateBrandRequest(String name) {
+        this.name = name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
 }

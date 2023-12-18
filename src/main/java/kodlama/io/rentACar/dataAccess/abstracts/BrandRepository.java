@@ -7,5 +7,5 @@ import java.util.List;
 //hangi nesne için ve primary key alanı ne
 
 public interface BrandRepository extends JpaRepository<Brand, Integer>{
-
+    boolean existsByName(String name);//spring jpa keywords
 }
